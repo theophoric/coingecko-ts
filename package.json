@@ -1,0 +1,7 @@
+{
+  "name": "coingecko-ts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "theophoric <theophoric@users.noreply.github.com>",
+  "license": "MIT"
+}
