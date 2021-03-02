@@ -1,5 +1,4 @@
 import { ResponseContext, RequestContext, HttpFile } from '../http/http';
-import * as models from '../models/all';
 import { Configuration} from '../configuration'
 import { Observable, of, from } from '../rxjsStub';
 import {mergeMap, map} from  '../rxjsStub';
@@ -109,11 +108,11 @@ export class ObservableCoinsApi {
      * Get historical market data include price, market cap, and 24h volume within a range of timestamp (granularity auto)
      * @param id pass the coin id (can be obtained from /coins) eg. bitcoin
      * @param vsCurrency The target currency of market data (usd, eur, jpy, etc.)
-     * @param from From date in UNIX Timestamp (eg. 1392577232)
-     * @param to To date in UNIX Timestamp (eg. 1422577232)
+     * @param fromDate From date in UNIX Timestamp (eg. 1392577232)
+     * @param toDate To date in UNIX Timestamp (eg. 1422577232)
      */
-    public coinsIdMarketChartRangeGet(id: string, vsCurrency: string, from: string, to: string, options?: Configuration): Observable<void> {
-    	const requestContextPromise = this.requestFactory.coinsIdMarketChartRangeGet(id, vsCurrency, from, to, options);
+    public coinsIdMarketChartRangeGet(id: string, vsCurrency: string, fromDate: string, toDate: string, options?: Configuration): Observable<void> {
+    	const requestContextPromise = this.requestFactory.coinsIdMarketChartRangeGet(id, vsCurrency, fromDate, toDate, options);
 
 		// build promise chain
     let middlewarePreObservable = from<RequestContext>(requestContextPromise);
@@ -347,11 +346,11 @@ export class ObservableContractApi {
      * @param id The id of the platform issuing tokens (Only &#x60;ethereum&#x60; is supported for now)
      * @param contractAddress Token&#39;s contract address
      * @param vsCurrency The target currency of market data (usd, eur, jpy, etc.)
-     * @param from From date in UNIX Timestamp (eg. 1392577232)
-     * @param to To date in UNIX Timestamp (eg. 1422577232)
+     * @param fromDate From date in UNIX Timestamp (eg. 1392577232)
+     * @param toDate To date in UNIX Timestamp (eg. 1422577232)
      */
-    public coinsIdContractContractAddressMarketChartRangeGet(id: string, contractAddress: string, vsCurrency: string, from: string, to: string, options?: Configuration): Observable<void> {
-    	const requestContextPromise = this.requestFactory.coinsIdContractContractAddressMarketChartRangeGet(id, contractAddress, vsCurrency, from, to, options);
+    public coinsIdContractContractAddressMarketChartRangeGet(id: string, contractAddress: string, vsCurrency: string, fromDate: string, toDate: string, options?: Configuration): Observable<void> {
+    	const requestContextPromise = this.requestFactory.coinsIdContractContractAddressMarketChartRangeGet(id, contractAddress, vsCurrency, fromDate, toDate, options);
 
 		// build promise chain
     let middlewarePreObservable = from<RequestContext>(requestContextPromise);
